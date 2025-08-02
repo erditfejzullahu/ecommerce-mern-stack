@@ -3,9 +3,7 @@ import {Routes, Route} from "react-router-dom"
 import NavBar from './components/NavBar'
 import HomePage from './pages/HomePage'
 import CreatePage from './pages/CreatePage'
-import { useColorModeValue } from './components/ui/color-mode'
-import { Toaster } from './components/ui/toaster'
-
+import { useColorModeValue } from '@chakra-ui/react'
 
 const App = () => {
   return (
@@ -15,7 +13,6 @@ const App = () => {
         <Route path="/" element={<HomePage />}/>
         <Route path='/create' element={<CreatePage />}/>
       </Routes>
-      <Toaster />
     </Box>
   )
 }

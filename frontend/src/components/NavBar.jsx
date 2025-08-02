@@ -1,7 +1,8 @@
 import { Button, Container, Flex, HStack, Text } from '@chakra-ui/react'
 import { CiSquarePlus } from "react-icons/ci";
 import { Link } from 'react-router-dom'
-import { ColorModeIcon, useColorMode, useColorModeValue } from './ui/color-mode';
+import { useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { FaCloudMoon, FaSun } from "react-icons/fa";
 const NavBar = () => {
     const {colorMode, toggleColorMode} = useColorMode()
   return (
@@ -20,9 +21,9 @@ const NavBar = () => {
                 fontWeight={"bold"}
                 textTransform={"uppercase"}
                 textAlign={"center"}
-                bgGradient={"to-r"}
-                gradientFrom={"cyan.400"}
-                gradientTo={"blue.200"}
+                bgGradient={"linear(to-r, cyan.400, blue.200)"}
+                // gradientFrom={"cyan.400"}
+                // gradientTo={"blue.200"}
                 bgClip={"text"}
             >
                 <Link to={'/'}>Product Store</Link>
@@ -30,11 +31,11 @@ const NavBar = () => {
             <HStack spaceX={2} alignItems={"center"}>
                 <Link to={"/create"}>
                     <Button>
-                        <CiSquarePlus size={20}/>
+                        <CiSquarePlus size={24}/>
                     </Button>
                 </Link>
                 <Button onClick={toggleColorMode}>
-                    {ColorModeIcon()}
+                    {colorMode === "dark" ? <><FaCloudMoon /></> : <><FaSun /></>}
                 </Button>
             </HStack>
         </Flex>
