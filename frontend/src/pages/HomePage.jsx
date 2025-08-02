@@ -14,8 +14,8 @@ const HomePage = () => {
   
   return (
     <Container maxW={'container.xl'} py={12}>
-      <VStack spaceY={8}>
-        <Text fontSize={30} fontWeight={"bold"} bgGradient={'to-r'} gradientFrom={'cyan.400'} gradientTo={'blue.500'} bgClip={"text"}>
+      <VStack spacing={8}>
+        <Text fontSize={30} fontWeight={"bold"} bgGradient={'linear(to-r, cyan.400, blue.500)'} bgClip={"text"}>
           Current Products <LuRocket />
         </Text>
 

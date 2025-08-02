@@ -28,7 +28,7 @@ const NavBar = () => {
             >
                 <Link to={'/'}>Product Store</Link>
             </Text>
-            <HStack spaceX={2} alignItems={"center"}>
+            <HStack spacing={2} alignItems={"center"}>
                 <Link to={"/create"}>
                     <Button>
                         <CiSquarePlus size={24}/>

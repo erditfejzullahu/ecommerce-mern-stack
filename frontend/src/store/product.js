@@ -42,16 +42,20 @@ export const useProductStore = create((set) => ({
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(product)
         })
         if(!res.ok){
             const errorJson = await res.json();
             return {success: false, message: errorJson.message}
         }
         const data = await res.json();
+        console.log(data, ' data');
+        
         set(state => ({
             products: state.products.map(product => product._id === pid ? data.data : product)
         }))
+        return {success: true, message: "product updated successfully!"}
     }
 })) 
 
